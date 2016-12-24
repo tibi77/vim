@@ -64,7 +64,7 @@ filetype plugin on
 " always show file name
 set modeline
 set ls=2
-colorscheme badwolf
+colorscheme peaksea
 let g:rehash256 = 1
 
 " identare
@@ -177,4 +177,3 @@ set t_Co=256
 set background=dark
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
-
