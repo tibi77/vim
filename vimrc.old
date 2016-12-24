@@ -1,56 +1,61 @@
-se nocompatible              " be iMproved, required
+set nocompatible              " be iMproved, required
 filetype off                  " required
+
+"" set the runtime path to include Vundle and initialize
+"" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
+" " alternatively, pass a path where Vundle should install plugins
+" "call vundle#begin('~/some/path/here')
+"
+" " let Vundle manage Vundle, required
+" Plugin 'VundleVim/Vundle.vim'
+"
+" " The following are examples of different formats supported.
+" " Keep Plugin commands between vundle#begin/end.
+" " plugin on GitHub repo
+" Plugin 'tpope/vim-fugitive'
+" " plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" " Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+" " git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" " The sparkup vim script is in a subdirectory of this repo called vim.
+" " Pass the path to set the runtimepath properly.
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" " Install L9 and avoid a Naming conflict if you've already installed a
+" " different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+"
+" " All of your Plugins must be added before the following line
+" call vundle#end()            " required
+" filetype plugin indent on    " required
+" " To ignore plugin indent changes, instead use:
+" "filetype plugin on
+" "
+" " Brief help
+" " :PluginList       - lists configured plugins
+" " :PluginInstall    - installs plugins; append `!` to update or just
+" :PluginUpdate
+" " :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" " :PluginClean      - confirms removal of unused plugins; append `!` to
+" auto-approve removal
+" "
+" " see :h vundle for more details or wiki for FAQ
+" " Put your non-Plugin stuff after this line))
+"
+"" path to directory where library can be found
+"let g:clang_library_path='/usr/lib/llvm-3.8/lib'
+"   " or path directly to the library file
+"let g:clang_library_path='/usr/lib64/libclang.so.3.8'
+
+"Plug 'tpope/vim-sensible'
+
 " incercare de introducere de pluginguri
 
-"NeoBundle Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
-endif
-
-" Required:
-set runtimepath+=/home/tibi/.vim/bundle/neobundle.vim/
-
-" Required:
-call neobundle#begin(expand('/home/tibi/.vim/bundle'))
-
-NeoBundle 'valloric/youcompleteme'
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" Add or remove your Bundles here:
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'flazz/vim-colorschemes'
-
-" You can specify revision/branch/tag.
-NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
-
-" Required:
-call neobundle#end()
-
-" Required:
-filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-"End NeoBundle Scripts-------------------------
-
-
-
-
+"Plug 'scrooloose/syntastic'
 
 call plug#begin()
-Plug 'scrooloose/syntastic'
-
-
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'rip-rip/clang_complete'
-
-
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
@@ -68,6 +73,7 @@ Plug 'scrooloose/syntastic'
 Plug 'Yggdroot/indentLine'
 Plug 'avelino/vim-bootstrap-updater'
 Plug 'easymotion/vim-easymotion'
+
 Plug 'junegunn/vim-easy-align',       { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
 Plug 'junegunn/vim-github-dashboard', { 'on': ['GHDashboard', 'GHActivity']      }
 Plug 'junegunn/vim-emoji'
@@ -166,7 +172,36 @@ Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
 
 ""sfarsit incercare
 
+"" Bundles
+
+"" Plug: 'tpope/vim-sensible'
+"" Plug: 'tpope/vim-rails'
+"" Plug: 'tpope/vim-fugitive'
+"" Plug: 'tpope/vim-dispatch'
+"" Plug: 'bling/vim-airline'
+"" Plug: 'airblade/vim-gitgutter'
+"" Plug: 'mattn/emmet-vim'
+"" Plug: 'endwise.vim'
+"" Plug: 'scrooloose/syntastic'
+"" Plug: 'tpope/vim-surround'
+"" Plug: 'tpope/vim-commentary'
+"" Plug: 'scrooloose/nerdtree'
+"" Plug: 'altercation/vim-colors-solarized'
+"" Plug: 'kien/ctrlp.vim'
+"" Plug: 'ervandew/supertab'
+"" Plug: "rizzatti/funcoo.vim"
+"" Plug: "rizzatti/dash.vim"
+"" Plug: "amiel/vim-tmux-navigator"
+"" Plug: "digitaltoad/vim-jade"
+
+call plug#end()
 " On-demand loading
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+call plug#end()
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" Plugins
 " Make sure you use single quotes
 
  " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
@@ -212,27 +247,12 @@ Plug 'altercation/vim-colors-solarized'
 let g:solarized_contrast="high"
 let g:solarized_visibility="normal"
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-" Don't forget to run `PlugInstall` to install the plugins.
- " Bundle: tpope/vim-dispatch
- " Bundle: bling/vim-airline
- " Bundle: airblade/vim-gitgutter
- " Bundle: mattn/emmet-vim
- " Bundle: endwise.vim
- " Bundle: scrooloose/syntastic
- " Bundle: tpope/vim-surround
- " Bundle: tpope/vim-commentary
- " Bundle: scrooloose/nerdtree
- " Bundle: altercation/vim-colors-solarized
- " Bundle: kien/ctrlp.vim
- " Bundle: ervandew/supertab
- " Bundle: "rizzatti/funcoo.vim"
- " Bundle: "rizzatti/dash.vim"
- " Bundle: "amiel/vim-tmux-navigator"
- " Bundle: "digitaltoad/vim-jade"
-
-
-
 call plug#end()
+" Don't forget to run `PlugInstall` to install the plugins.
+
+
+
+
 set nocompatible
 
 " font
